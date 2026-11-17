@@ -1,0 +1,14 @@
+{
+  "name": "chatgpt-bulk-chat-manager",
+  "version": "1.0.8",
+  "private": true,
+  "description": "UI-based ChatGPT personal-account selection and sequential deletion",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node scripts/check.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Bulk Chat Manager",
+  "version": "1.0.8",
+  "description": "Manage selected chats through your existing ChatGPT personal-account session. No credentials stored.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ChatGPT Bulk Chat Manager"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "src/core.js",
+        "src/client.js",
+        "src/adapter.js",
+        "src/ui.js",
+        "content.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
